@@ -14,6 +14,16 @@ pipeline {
                     junit 'target/surefire-reports/**/*.xml'
                 }
             }
+            stage('test'){
+            steps {
+                            bat 'mvn test'
+                        }
+                        post {
+                            success {
+                                junit 'target/surefire-reports/*.xml'
+                            }
+                        }
+            }
         }
     }
 }
