@@ -14,6 +14,7 @@ pipeline {
                     junit 'target/surefire-reports/**/*.xml'
                 }
             }
+       }
             stage('test'){
             steps {
                             bat 'mvn test'
@@ -23,7 +24,7 @@ pipeline {
                                 junit 'target/surefire-reports/*.xml'
                             }
                         }
-            }
+
         }
     }
 }
